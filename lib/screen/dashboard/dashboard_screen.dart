@@ -284,7 +284,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           child: Stack(
             children: [
               Container(
-                height: getScreenHeight(context),
+                height: getScreenHeight(context) * 0.8,
                 child: GoogleMapLocation(
                   lat: _lat,
                   long: _long,

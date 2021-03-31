@@ -5,6 +5,7 @@ import 'package:eld_pinpoint_driver/widget/custom_appbar.dart';
 import 'package:eld_pinpoint_driver/widget/custom_button.dart';
 import 'package:eld_pinpoint_driver/widget/custom_textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class EventLogScreen extends StatefulWidget {
   static const routeName = '/event_log';
@@ -16,14 +17,16 @@ class EventLogScreen extends StatefulWidget {
 class _EventLogScreenState extends State<EventLogScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey();
 
-  TextEditingController _timeController = TextEditingController();
+  TextEditingController _timeController = TextEditingController(
+      text: formatDate(DateTime.now(), [hh, ':', nn, " ", am]).toString());
   TimeOfDay selectedTime = TimeOfDay(hour: 00, minute: 00);
 
-  TextEditingController _dateController = TextEditingController();
+  TextEditingController _dateController =
+      TextEditingController(text: DateFormat.yMd().format(DateTime.now()));
   DateTime selectedDate = new DateTime.now();
 
-  List<String> statusList = ["Driving"];
-  String status = "Driving";
+  List<String> statusList = ["DRIVING", "ON DUTY", "SLEEPING", "OFF DUTY"];
+  String status = "DRIVING";
 
   Future _selectDate(BuildContext context) async {
     DateTime picked = await showDatePicker(
@@ -158,7 +161,7 @@ class _EventLogScreenState extends State<EventLogScreen> {
                           status = value;
                         });
                       },
-                      hint: Text('Select Participate Type'),
+                      hint: Text('Select Status'),
                       validator: (value) {
                         if (value == null) {
                           return 'Required field';
@@ -172,7 +175,7 @@ class _EventLogScreenState extends State<EventLogScreen> {
                     child: CustomTextField(
                       keyboardType: TextInputType.phone,
                       hintText: 'Location',
-                      initialValue: '',
+                      initialValue: 'SG Road',
                       enabled: false,
                       // validator: (value) {
                       //   if (value.isEmpty) {

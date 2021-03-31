@@ -10,6 +10,6 @@ class AppLogo extends StatelessWidget {
     return Container(
         height: height,
         width: width,
-        child: Image.asset("assets/images/app-logo.png"));
+        child: Image.asset("assets/images/eld-logo.png"));
   }
 }

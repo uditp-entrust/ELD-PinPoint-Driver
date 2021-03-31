@@ -1,5 +1,7 @@
+import 'package:eld_pinpoint_driver/constants.dart';
 import 'package:eld_pinpoint_driver/screen/event_log/event_log_screen.dart';
 import 'package:eld_pinpoint_driver/screen/home/home_screen.dart';
+import 'package:eld_pinpoint_driver/screen/log_book/widget/log_chart.dart';
 import 'package:eld_pinpoint_driver/widget/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
@@ -27,10 +29,15 @@ class LogBookScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    height: 100,
+                    height: 170,
+                    child: LogChart(
+                      height: 170,
+                      width: getScreenWidth(context) - 20,
+                    ),
                   ),
                   Container(
                     height: 60,
+                    margin: EdgeInsets.only(top: 40),
                     child: Card(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -181,7 +188,7 @@ class LogBookScreen extends StatelessWidget {
                                   Row(
                                     children: [
                                       Container(
-                                        width: 90,
+                                        width: 85,
                                         child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
@@ -205,7 +212,7 @@ class LogBookScreen extends StatelessWidget {
                                   Row(
                                     children: [
                                       Container(
-                                        width: 90,
+                                        width: 85,
                                         child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,

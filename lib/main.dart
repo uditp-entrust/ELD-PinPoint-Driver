@@ -3,6 +3,7 @@ import 'package:eld_pinpoint_driver/screen/event_log/event_log_screen.dart';
 import 'package:eld_pinpoint_driver/screen/home/home_screen.dart';
 import 'package:eld_pinpoint_driver/screen/log_book/log_book_screen.dart';
 import 'package:eld_pinpoint_driver/screen/trip_history/trip_history_screen.dart';
+import 'package:eld_pinpoint_driver/screen/log_book/widget/log_chart.dart';
 import 'package:flutter/material.dart';
 
 import 'package:eld_pinpoint_driver/theme.dart';
